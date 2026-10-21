@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tính toán 2 số</title>
+  </head>
+
+  <body>
+    <h2>Tính tổng, hiệu, tích, thương</h2>
+
+    <form method="post" action="/">
+      <label>Nhập số a:</label>
+      <input type="number" id="a" name="a" value="{{ketQua.a}}" />
+
+      <br /><br />
+
+      <label>Nhập số b:</label>
+      <input type="number" id="b" name="b" value="{{ketQua.b}}" />
+
+      <br /><br />
+
+      <button type="submit">Tính</button>
+    </form>
+
+    <div class="ketQua">
+      <ul>
+        <li>{{ketQua.a}} + {{ketQua.b}} = {{ketQua.cong}}</li>
+        <li>{{ketQua.a}} - {{ketQua.b}} = {{ketQua.tru}}</li>
+        <li>{{ketQua.a}} * {{ketQua.b}} = {{ketQua.nhan}}</li>
+        <li>{{ketQua.a}} / {{ketQua.b}} = {{ketQua.chia}}</li>
+      </ul>
+    </div>
+  </body>
+</html>
