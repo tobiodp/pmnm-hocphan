@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <title>{% block title %}My Shop{% endblock %}</title>
+  </head>
+  <body>
+    <!-- Nhúng Navbar -->
+    {% include '_navbar.html' %}
+
+    <!-- Nội dung chính -->
+    <div class="content">{% block content %}{% endblock %}</div>
+
+    <!-- Nhúng Footer -->
+    {% include '_footer.html' %}
+  </body>
+</html>

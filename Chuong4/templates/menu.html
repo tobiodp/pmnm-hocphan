@@ -1,0 +1,9 @@
+{% extends "base.html" %} {% import "_macro.html" as macros %} {% block title
+%}Danh Sách Menu{% endblock %} {% block content %}
+<h2>Thực Đơn Của Quán</h2>
+
+<!-- Hiển thị danh sách món ăn bằng macro item_card -->
+{% for item in items %} {{ macros.item_card(item) }} {% endfor %}
+
+<!-- Hiển thị thanh phân trang bằng macro pagination -->
+{{ macros.pagination(page, pages, 'menu') }} {% endblock %}

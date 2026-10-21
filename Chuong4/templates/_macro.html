@@ -1,0 +1,26 @@
+{% macro item_card(item) %}
+<div
+  style="border: 1px solid gray; margin-bottom: 10px; padding: 10px"
+  class="{% if not item.avaiable %}het_hang{% endif %}"
+>
+  <h3>ID: {{ item.id }} - {{ item.name | title }}</h3>
+  <p>Giá: {{ item.price | vnd }}</p>
+  <p>
+    Tình trạng: {% if item.avaiable %} Còn hàng {% else %}
+    <span style="color: red">Hết hàng</span>
+    {% endif %}
+  </p>
+</div>
+{% endmacro %} {% macro pagination(page, pages, endpoint) %}
+<div style="margin-top: 15px">
+  {% if page > 1 %}
+  <a href="{{ url_for(endpoint, page=page-1) }}">Trang trước</a>
+  {% endif %}
+
+  <span>Trang {{ page }} / {{ pages }}</span>
+
+  {% if page < pages %}
+  <a href="{{ url_for(endpoint, page=page+1) }}">Trang sau</a>
+  {% endif %}
+</div>
+{% endmacro %}
