@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% block title %}Bài 1 - Máy tính cơ bản{% endblock %}
+
+{% block content %}
+<h2>Bài 1: Máy tính cơ bản</h2>
+
+<!-- Thông báo lỗi chung (ví dụ: lỗi cả hai ô) -->
+{% if err_general %}
+<div class="alert-error">
+  {{ err_general }}
+</div>
+{% endif %}
+
+<form method="POST">
+  <!-- Ô a -->
+  <div class="row">
+    <label>Số thứ nhất a:</label>
+    <input type="text" name="a" value="{{ a }}" />
+    {% if err_a %}
+    <div class="error">{{ err_a }}</div>
+    {% endif %}
+  </div>
+
+  <!-- Phép toán op -->
+  <div class="row">
+    <label>Phép toán op:</label>
+    <select name="op">
+      <option value="+" {% if op == '+' %}selected{% endif %}>+</option>
+      <option value="-" {% if op == '-' %}selected{% endif %}>-</option>
+      <option value="*" {% if op == '*' %}selected{% endif %}>*</option>
+      <option value="/" {% if op == '/' %}selected{% endif %}>/</option>
+    </select>
+  </div>
+
+  <!-- Ô b -->
+  <div class="row">
+    <label>Số thứ hai b:</label>
+    <input type="text" name="b" value="{{ b }}" />
+    {% if err_b %}
+    <div class="error">{{ err_b }}</div>
+    {% endif %}
+  </div>
+
+  <div class="row">
+    <label>&nbsp;</label>
+    <button type="submit" class="btn-primary">Tính</button>
+  </div>
+</form>
+
+<!-- Hiển thị kết quả -->
+{% if result %}
+<div class="result-box">
+  <label>Kết quả:</label>
+  <span class="result-text">{{ result }}</span>
+</div>
+{% endif %}
+{% endblock %}

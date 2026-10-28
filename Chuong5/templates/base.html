@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}Bài tập Chương 5{% endblock %}</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        background-color: #f8fafc;
+        color: #1e293b;
+        margin: 0;
+        padding: 0;
+        line-height: 1.5;
+      }
+      .nav-container {
+        background: #ffffff;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+        border-bottom: 1px solid #e2e8f0;
+      }
+      .navbar {
+        max-width: 900px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 12px 24px;
+      }
+      .nav-brand {
+        font-weight: 700;
+        font-size: 18px;
+        color: #0f172a;
+      }
+      .nav-links {
+        display: flex;
+        gap: 8px;
+      }
+      .nav-link {
+        text-decoration: none;
+        padding: 8px 16px;
+        border-radius: 6px;
+        font-size: 14px;
+        font-weight: 500;
+        color: #64748b;
+        transition: all 0.2s ease;
+      }
+      .nav-link:hover {
+        background-color: #f1f5f9;
+        color: #0f172a;
+      }
+      .nav-link.active {
+        background-color: #e0e7ff;
+        color: #4338ca;
+        font-weight: 600;
+      }
+      .main-content {
+        max-width: 900px;
+        margin: 32px auto;
+        padding: 28px 36px;
+        background: #ffffff;
+        border-radius: 12px;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+        border: 1px solid #e2e8f0;
+      }
+      h2 {
+        margin-top: 0;
+        color: #0f172a;
+        font-size: 22px;
+        margin-bottom: 20px;
+        border-bottom: 2px solid #e2e8f0;
+        padding-bottom: 10px;
+      }
+      .error {
+        color: #dc2626;
+        font-size: 13px;
+        margin-top: 4px;
+      }
+      .alert-error {
+        background-color: #fef2f2;
+        border: 1px solid #fecaca;
+        color: #dc2626;
+        padding: 10px 14px;
+        border-radius: 6px;
+        margin-bottom: 20px;
+        font-weight: 500;
+      }
+      .row {
+        margin-bottom: 16px;
+      }
+      label {
+        display: inline-block;
+        width: 140px;
+        font-weight: 600;
+        font-size: 14px;
+        color: #334155;
+      }
+      input[type="text"],
+      input[type="number"],
+      select {
+        padding: 8px 12px;
+        width: 240px;
+        border: 1px solid #cbd5e1;
+        border-radius: 6px;
+        font-size: 14px;
+        outline: none;
+        transition: border-color 0.2s, box-shadow 0.2s;
+      }
+      input[type="text"]:focus,
+      input[type="number"]:focus,
+      select:focus {
+        border-color: #6366f1;
+        box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+      }
+      button.btn-primary {
+        background-color: #4f46e5;
+        color: white;
+        border: none;
+        padding: 8px 24px;
+        border-radius: 6px;
+        font-size: 14px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background-color 0.2s;
+      }
+      button.btn-primary:hover {
+        background-color: #4338ca;
+      }
+      .result-box {
+        margin-top: 24px;
+        padding: 14px 18px;
+        background-color: #f0fdf4;
+        border: 1px solid #bbf7d0;
+        border-radius: 8px;
+      }
+      .result-text {
+        font-weight: 700;
+        color: #15803d;
+        font-size: 16px;
+      }
+    </style>
+    {% block extra_css %}{% endblock %}
+  </head>
+  <body>
+    {% include '_navbar.html' %}
+    <main class="main-content">
+      {% block content %}{% endblock %}
+    </main>
+  </body>
+</html>

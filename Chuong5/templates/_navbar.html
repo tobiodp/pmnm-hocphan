@@ -1,0 +1,16 @@
+<header class="nav-container">
+  <div class="navbar">
+    <div class="nav-brand">📚 Chương 5 - Flask Form</div>
+    <nav class="nav-links">
+      <a href="/bai1" class="nav-link {% if request.path in ['/', '/bai1'] %}active{% endif %}">
+        Bài 1: Máy tính cơ bản
+      </a>
+      <a href="/bai2" class="nav-link {% if request.path == '/bai2' %}active{% endif %}">
+        Bài 2: Tính điểm học phần
+      </a>
+      <a href="/bai3" class="nav-link {% if request.path == '/bai3' %}active{% endif %}">
+        Bài 3: Tính chỉ số BMI
+      </a>
+    </nav>
+  </div>
+</header>

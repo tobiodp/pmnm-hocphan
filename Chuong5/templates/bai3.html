@@ -1,0 +1,72 @@
+{% extends 'base.html' %} {% block title %}Bài 3 - Tính chỉ số BMI{% endblock %}
+{% block content %}
+<div style="margin: 30px">
+  <h2>Bài 3: Tính chỉ số BMI</h2>
+
+  <!-- Thông báo lỗi chung -->
+  {% if err_general %}
+  <div style="color: red; font-weight: bold; margin-bottom: 15px">
+    {{ err_general }}
+  </div>
+  {% endif %}
+
+  <form method="POST">
+    <!-- Ô Chiều cao -->
+    <div style="margin-bottom: 15px">
+      <label style="display: inline-block; width: 130px; font-weight: bold"
+        >Chiều cao (cm):</label
+      >
+      <input
+        type="text"
+        name="cao"
+        value="{{ cao }}"
+        style="padding: 5px; width: 200px"
+      />
+      {% if err_cao %}
+      <div style="color: red; font-size: 13px; margin-top: 3px">
+        {{ err_cao }}
+      </div>
+      {% endif %}
+    </div>
+
+    <!-- Ô Cân nặng -->
+    <div style="margin-bottom: 15px">
+      <label style="display: inline-block; width: 130px; font-weight: bold"
+        >Cân nặng (kg):</label
+      >
+      <input
+        type="text"
+        name="nang"
+        value="{{ nang }}"
+        style="padding: 5px; width: 200px"
+      />
+      {% if err_nang %}
+      <div style="color: red; font-size: 13px; margin-top: 3px">
+        {{ err_nang }}
+      </div>
+      {% endif %}
+    </div>
+
+    <div style="margin-bottom: 15px">
+      <label style="display: inline-block; width: 130px; font-weight: bold"
+        >&nbsp;</label
+      >
+      <button type="submit" style="padding: 6px 15px">Tính BMI</button>
+    </div>
+  </form>
+
+  <!-- Hiển thị kết quả kèm đổi màu theo chuẩn yêu cầu -->
+  {% if result %}
+  <div style="margin-top: 20px">
+    <label style="display: inline-block; width: 130px; font-weight: bold"
+      >Mong đợi:</label
+    >
+    <span
+      style="font-weight: bold; color: {% if color_class == 'green' %}green{% elif color_class == 'red' %}red{% else %}goldenrod{% endif %};"
+    >
+      {{ result }}
+    </span>
+  </div>
+  {% endif %}
+</div>
+{% endblock %}

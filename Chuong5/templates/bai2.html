@@ -1,0 +1,45 @@
+{% extends 'base.html' %} {% block title %}Bài 2 - Tính điểm học phần{% endblock
+%} {% block content %}
+<h2>Bài 2: Tính điểm học phần</h2>
+
+<form method="POST">
+  <div class="row">
+    <label>CC (10%):</label>
+    <input
+      type="text"
+      name="cc"
+      value="{{ cc }}"
+      placeholder="Điểm chuyên cần"
+    />
+  </div>
+
+  <div class="row">
+    <label>GK (30%):</label>
+    <input type="text" name="gk" value="{{ gk }}" placeholder="Điểm giữa kỳ" />
+  </div>
+
+  <div class="row">
+    <label>CK (60%):</label>
+    <input type="text" name="ck" value="{{ ck }}" placeholder="Điểm cuối kỳ" />
+  </div>
+
+  <div class="row">
+    <label>&nbsp;</label>
+    <button type="submit" class="btn-primary">Tính điểm</button>
+  </div>
+</form>
+
+{% if result %}
+<div
+  class="result-box"
+  style="{% if is_error %}background-color: #fef2f2; border-color: #fecaca;{% endif %}"
+>
+  <label>Kết quả:</label>
+  <span
+    class="result-text"
+    style="{% if is_error %}color: #dc2626;{% else %}color: #15803d;{% endif %}"
+  >
+    {{ result }}
+  </span>
+</div>
+{% endif %} {% endblock %}
