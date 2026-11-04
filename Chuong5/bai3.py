@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request
 
 app = Flask(__name__)
-git
+
 def tinh_bmi():
     cao_str = request.form.get('cao', '')
     nang_str = request.form.get('nang', '')
