@@ -1,0 +1,26 @@
+<nav class="nav-container">
+  <div class="navbar">
+    <div class="nav-brand">📚 Quản Lý Sách</div>
+    <div class="nav-links">
+      <a href="/" class="nav-link {% if request.path == '/' %}active{% endif %}"
+        >Dashboard</a
+      >
+      <a
+        href="/categories"
+        class="nav-link {% if request.path.startswith('/categories') %}active{% endif %}"
+        >QL Danh Mục</a
+      >
+      <a
+        href="/books"
+        class="nav-link {% if request.path.startswith('/books') %}active{% endif %}"
+        >QL Sách</a
+      >
+      <a
+        href="/themmau"
+        class="nav-link text-success"
+        onclick="return confirm('Nạp dữ liệu mẫu vào CSDL?');"
+        >Nạp Dữ Liệu Mẫu</a
+      >
+    </div>
+  </div>
+</nav>
